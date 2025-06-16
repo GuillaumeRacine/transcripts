@@ -1,6 +1,6 @@
 # Transcript Summarizer
 
-A simple command-line tool that retrieves YouTube transcripts, summarizes them using an LLM, and stores the results in Notion.
+A simple command-line tool that retrieves YouTube transcripts, summarizes them using an LLM, stores the results in Notion and saves a local markdown copy.
 
 ## Setup
 
@@ -21,10 +21,10 @@ NOTION_PARENT_ID=parent-page-id
 
 ## Usage
 
-Run the script and follow the prompts:
+Run the script and follow the prompt:
 
 ```bash
 python main.py
 ```
 
-Enter a YouTube video or playlist URL when prompted and provide instructions for the LLM to generate your summary. A new Notion page will be created for each processed video. Previously processed videos are recorded in `processed.json` to avoid duplicates.
+When prompted, paste a YouTube video URL. The application fetches the transcript, generates a long summary using GPT-4 according to the built‑in instructions, creates a new Notion page under the configured parent and stores the same summary locally in the `summaries/` folder. Previously processed videos are recorded in `processed.json` to avoid duplicates.
